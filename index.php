@@ -23,7 +23,7 @@
     <!-- Navbar -->
     <div class="navbar-fluid p-0 ">
         <nav class="navbar navbar-expand-md navbar-light custom-navbar">
-            <img src="./images/logo.png" alt="Logo not found" class="logo" >
+            <img src="./images/logo.png" alt="Logo not found" class="logo">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -55,6 +55,35 @@
             </div>
         </nav>
     </div>
+
+
+    <!-- second nav bar  -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-secondary ">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Welcome Guest</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!-- Heading -->
+    <div class="bg-light">
+        <h1 class="text-center">
+            Welcome to your store
+        </h1>
+    </div>
+
+
+    <!--  -->
+
+
+
+
+
 
 
     <!-- Footer -->
