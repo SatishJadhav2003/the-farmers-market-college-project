@@ -14,12 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- CSS -->
-    <style>
-        .custom-navbar {
-            background-color: #51f5c4;
-            /* replace with your desired color */
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -28,7 +23,7 @@
     <!-- Navbar -->
     <div class="navbar-fluid p-0 ">
         <nav class="navbar navbar-expand-md navbar-light custom-navbar">
-            <img src="./images/logo.png" alt="">
+            <img src="./images/logo.png" alt="Logo not found" class="logo" >
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -60,6 +55,13 @@
             </div>
         </nav>
     </div>
+
+
+    <!-- Footer -->
+
+    <!-- <div class="custom-navbar p-3 text-center">
+        <p>All rights reserved</p>
+    </div> -->
 
 
     <!-- bootstrap js link -->
