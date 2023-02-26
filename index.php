@@ -19,78 +19,199 @@
 </head>
 
 <body>
+    <section>
+        <!-- Navbar -->
+        <div class="navbar-fluid p-0 ">
+            <nav class="navbar navbar-expand-md navbar-light custom-navbar">
+                <img src="./images/logo.png" alt="Logo not found" class="logo">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Product</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup>1</sup></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Total Price: 100/-</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
 
-    <!-- Navbar -->
-    <div class="navbar-fluid p-0 ">
-        <nav class="navbar navbar-expand-md navbar-light custom-navbar">
-            <img src="./images/logo.png" alt="Logo not found" class="logo">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+
+        <!-- second nav bar  -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-secondary ">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Welcome Guest</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+            </ul>
+        </nav>
+
+
+        <!-- Heading -->
+        <div class="bg-light p-3">
+            <h1 class="text-center">
+                Welcome to your store
+            </h1>
+        </div>
+    </section>
+
+    <!-- Product cart -->
+    <section>
+        <div class="row">
+
+            <!-- Products -->
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-4 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" src="images/potato.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn custom-color">Add to Cart</a>
+                                <a href="#" class="btn btn-secondary">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" src="images/tomato.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn custom-color">Add to Cart</a>
+                                <a href="#" class="btn btn-secondary">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" src="images/onion.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn custom-color">Add to Cart</a>
+                                <a href="#" class="btn btn-secondary">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" src="images/tomato.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn custom-color">Add to Cart</a>
+                                <a href="#" class="btn btn-secondary">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" src="images/eggplant.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn custom-color">Add to Cart</a>
+                                <a href="#" class="btn btn-secondary">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" src="images/potato.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn custom-color ">Add to Cart</a>
+                                <a href="#" class="btn btn-secondary  ">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidenav -->
+            <div class="col-md-2 bg-secondary p-0">
+
+                <!-- Brands -->
+                <ul class="navbar-nav me-auto  text-center">
+                    <li class="nav-item bg-info">
+                        <a href="#" class="nav-link text-light">Brands</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Product</a>
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link text-light">Brands 1</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link text-light">Brands 2</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link text-light">Brands 3</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup>1</sup></a>
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link text-light">Brands 4</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Total Price: 100/-</a>
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link text-light">Brands 5</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+                <!-- Category -->
+                <ul class="navbar-nav me-auto  text-center">
+                    <li class="nav-item bg-info">
+                        <a href="#" class="nav-link text-light">Categories</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link text-light">Category 1</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link text-light">Category 2</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link text-light">Category 3</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link text-light">Category 4</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link text-light">Category 5</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </div>
-
-
-    <!-- second nav bar  -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-secondary ">
-        <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Welcome Guest</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
-            </li>
-        </ul>
-    </nav>
-
-
-    <!-- Heading -->
-    <div class="bg-light">
-        <h1 class="text-center">
-            Welcome to your store
-        </h1>
-    </div>
-
-
-    <!--  -->
-
-
-
+        </div>
+    </section>
 
 
 
 
     <!-- Footer -->
 
-    <!-- <div class="custom-navbar p-3 text-center">
-        <p>All rights reserved</p>
-    </div> -->
+    <div class="custom-navbar text-center ">
+    
+        <p>All rights reserved by Harshal yeole &#128513;</p>
+    </div>
 
 
     <!-- bootstrap js link -->
