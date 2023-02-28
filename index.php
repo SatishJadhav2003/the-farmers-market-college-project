@@ -47,6 +47,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Total Price: 100/-</a>
                         </li>
+                        
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -87,7 +88,7 @@
                 <div class="row">
                     <div class="col-md-4 mb-2">
                         <div class="card">
-                            <img class="card-img-top" src="images/potato.jpg" alt="Card image cap">
+                            <img class="card-img-top" src="./images/potato.jpg" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -98,7 +99,7 @@
                     </div>
                     <div class="col-md-4 mb-2">
                         <div class="card">
-                            <img class="card-img-top" src="images/tomato.jpg" alt="Card image cap">
+                            <img class="card-img-top" src="./images/tomato.jpg" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -109,7 +110,7 @@
                     </div>
                     <div class="col-md-4 mb-2">
                         <div class="card">
-                            <img class="card-img-top" src="images/onion.jpg" alt="Card image cap">
+                            <img class="card-img-top" src="./images/onion.jpg" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -160,7 +161,9 @@
                 <!-- Brands -->
                 <ul class="navbar-nav me-auto  text-center">
                     <li class="nav-item bg-info">
-                        <a href="#" class="nav-link text-light">Brands</a>
+                        <a href="#" class="nav-link text-light">
+                            <h5>Brands</h5>
+                        </a>
                     </li>
                     <li class="nav-item ">
                         <a href="#" class="nav-link text-light">Brands 1</a>
@@ -181,7 +184,9 @@
                 <!-- Category -->
                 <ul class="navbar-nav me-auto  text-center">
                     <li class="nav-item bg-info">
-                        <a href="#" class="nav-link text-light">Categories</a>
+                        <a href="#" class="nav-link text-light">
+                            <h5>Categories</h5>
+                        </a>
                     </li>
                     <li class="nav-item ">
                         <a href="#" class="nav-link text-light">Category 1</a>
@@ -193,7 +198,7 @@
                         <a href="#" class="nav-link text-light">Category 3</a>
                     </li>
                     <li class="nav-item ">
-                        <a href="#" class="nav-link text-light">Category 4</a>
+                        <a href="#" class="nav-link text-light"> Category 4 </a>
                     </li>
                     <li class="nav-item ">
                         <a href="#" class="nav-link text-light">Category 5</a>
@@ -209,7 +214,7 @@
     <!-- Footer -->
 
     <div class="custom-navbar text-center ">
-    
+
         <p>All rights reserved by Harshal yeole &#128513;</p>
     </div>
 
