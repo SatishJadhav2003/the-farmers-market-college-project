@@ -5,6 +5,7 @@
     </div>
 
     <div class="input-group mb-2 w-10 ">
-        <input type="submit" class="form-control" name="insert_cat" value="Insert Categories" aria-label="categories" aria-describedby="basic-addon1" class="custom-navbar">
+        <!-- <input type="submit" class="form-control" name="insert_cat" value="Insert Categories" aria-label="categories" aria-describedby="basic-addon1" class="custom-navbar"> -->
+        <button class="custom-color p-2 my-3 border-0">Insert Category</button>
     </div>
 </form>
