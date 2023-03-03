@@ -30,8 +30,7 @@
                 </div>
                 <nav class="navbar navbar-expand-md navbar-dark  ">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Welcome Satish</a>
+                        <li class="nav-item"><a href="" class="nav-link  bg-secondary m-1">Log Out</a>
                         </li>
                     </ul>
                 </nav>
@@ -44,23 +43,20 @@
     <section>
         <div class="row">
             <div class="col-md-12 bg-secondary p-2 d-flex align-items-center">
-                <div class="p-3">
+                <div class="p-4">
                     <a href="#">
                         <img src="../images/potato.jpg" alt=" img not found" class="admin-image">
                     </a>
-                    <p class="text-center text-light">Admin name</p>
+                    <p class="text-center text-light my-2">Admin name</p>
                 </div>
                 <div class="button text-center">
-                    <button class="m-1"><a href="index.php" class="nav-link  custom-color m-1">Insert Products</a></button>
-                    <button class="m-1"><a href="" class="nav-link  custom-color m-1">View Products</a></button>
-                    <button class="m-1"><a href="index.php?insert_category" class="nav-link  custom-color m-1">Insert Categories</a></button>
-                    <button class="m-1"><a href="" class="nav-link  custom-color m-1">View Categories</a></button>
-                    <button class="m-1"><a href="index.php?insert_brand" class="nav-link  custom-color m-1">Insert Brands</a></button>
-                    <button class="m-1"><a href="" class="nav-link  custom-color m-1">View Brands</a></button>
-                    <button class="m-1"><a href="" class="nav-link  custom-color m-1">All Orders</a></button>
-                    <button class="m-1"><a href="" class="nav-link  custom-color m-1">All Payments</a></button>
-                    <button class="m-1"><a href="" class="nav-link  custom-color m-1">List Users</a></button>
-                    <button class="m-1"><a href="" class="nav-link  custom-color m-1">Log Out</a></button>
+                    <button class="m-2"><a href="index.php" class="nav-link  custom-color m-1">Insert Products</a></button>
+                    <button class="m-2"><a href="" class="nav-link  custom-color m-1">View Products</a></button>
+                    <button class="m-2"><a href="index.php?insert_category" class="nav-link  custom-color m-1">Insert Categories</a></button>
+                    <button class="m-2"><a href="" class="nav-link  custom-color m-1">View Categories</a></button>
+                    <button class="m-2"><a href="" class="nav-link  custom-color m-1">All Orders</a></button>
+                    <button class="m-2"><a href="" class="nav-link  custom-color m-1">All Payments</a></button>
+                    <button class="m-2"><a href="" class="nav-link  custom-color m-1">List Users</a></button>
                 </div>
             </div>
         </div>
@@ -74,11 +70,6 @@
         //Insert Category
         if (isset($_GET['insert_category'])) {
             include('insert_categories.php');
-        }
-
-        //Insert Brands
-        if (isset($_GET['insert_brand'])) {
-            include('insert_brands.php');
         }
         ?>
     </div>
