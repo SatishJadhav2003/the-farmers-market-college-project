@@ -71,9 +71,12 @@
     <div class="container my-5">
 
         <?php
+        //Insert Category
         if (isset($_GET['insert_category'])) {
             include('insert_categories.php');
         }
+
+        //Insert Brands
         if (isset($_GET['insert_brand'])) {
             include('insert_brands.php');
         }
