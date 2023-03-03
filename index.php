@@ -159,7 +159,7 @@
             <div class="col-md-2 bg-secondary p-0">
 
                 <!-- Brands -->
-                <ul class="navbar-nav me-auto  text-center">
+                <!-- <ul class="navbar-nav me-auto  text-center">
                     <li class="nav-item bg-info">
                         <a href="#" class="nav-link text-light">
                             <h5>Brands</h5>
@@ -180,7 +180,7 @@
                     <li class="nav-item ">
                         <a href="#" class="nav-link text-light">Brands 5</a>
                     </li>
-                </ul>
+                </ul> -->
                 <!-- Category -->
                 <ul class="navbar-nav me-auto  text-center">
                     <li class="nav-item bg-info">
@@ -215,7 +215,7 @@
 
     <div class="custom-navbar text-center ">
 
-        <p>All rights reserved by Harshal yeole &#128513;</p>
+        <p>All rights reserved by VIP Group &#128526;</p>
     </div>
 
 
