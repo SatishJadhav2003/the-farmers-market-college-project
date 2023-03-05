@@ -64,7 +64,7 @@
 
 
     <!-- php code to display values of buttons -->
-    <div class="container my-5">
+    <div class="container my-3">
 
         <?php
         //Insert Category
