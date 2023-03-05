@@ -30,7 +30,7 @@
                 </div>
                 <nav class="navbar navbar-expand-md navbar-dark  ">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a href="" class="nav-link  bg-secondary m-1">Log Out</a>
+                        <li class="nav-item"><a href="" class="nav-link btn btn-danger m-1">Log Out</a>
                         </li>
                     </ul>
                 </nav>
