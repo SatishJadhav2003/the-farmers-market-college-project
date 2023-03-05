@@ -83,7 +83,7 @@
         <!-- Heading -->
         <div class="bg-light p-3">
             <h1 class="text-center">
-                Welcome to your store
+                Welcome to Farmer's Market
             </h1>
         </div>
     </section>
@@ -189,9 +189,10 @@
 
                     while ($row_data=mysqli_fetch_assoc($result_cate)) {
                         $cate_title = $row_data['category_title'];
+                        $cate_id = $row_data['category_id'];
 
                         echo "<li class='nav-item '>
-                        <a href='#' class='nav-link text-light'>$cate_title</a>
+                        <a href='index.php?category=$cate_id' class='nav-link text-light'>$cate_title</a>
                     </li>";
                     }
                     ?>
