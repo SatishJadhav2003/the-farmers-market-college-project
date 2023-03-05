@@ -20,7 +20,7 @@
 <body>
 
 
-    <!-- Nvvbar -->
+    <!-- Navbar -->
     <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg navbar-light  custom-navbar">
             <div class="container-fluid">
@@ -50,7 +50,7 @@
                     <p class="text-center text-light my-2">Admin name</p>
                 </div>
                 <div class="button text-center">
-                    <button class="m-2"><a href="index.php" class="nav-link  custom-color m-1">Insert Products</a></button>
+                    <button class="m-2"><a href="insert_product.php" class="nav-link  custom-color m-1">Insert Products</a></button>
                     <button class="m-2"><a href="" class="nav-link  custom-color m-1">View Products</a></button>
                     <button class="m-2"><a href="index.php?insert_category" class="nav-link  custom-color m-1">Insert Categories</a></button>
                     <button class="m-2"><a href="" class="nav-link  custom-color m-1">View Categories</a></button>
