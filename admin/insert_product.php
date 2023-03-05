@@ -99,11 +99,69 @@
             </div>
 
             <!-- Button -->
+            
             <div class="form-outline mb-4 w-50 m-auto">
-                <input type="submit" name="insert_product" class="btn btn-info mb-4 px-3" value="Insert Products">
+                
+                <input type="submit" href="../admin/index.php" name="insert_product" class="btn btn-success mb-4 px-3" value="Insert Products">
+                <a href="../admin/index.php" type="button" class="btn btn-danger px-3 mb-4 " >Back</a>
             </div>
         </form>
     </div>
+
+
+
+    <!-- php code to insert products into database -->
+
+    <?php
+
+
+    if (isset($_POST['insert_product'])) {
+        
+        $product_title = $_POST['product_title'];
+        $product_description = $_POST['product_description'];
+        $product_keywords = $_POST['product_keywords'];
+        $product_category = $_POST['product_category'];
+        $product_price = $_POST['product_price'];
+        $product_status = 'True';
+
+
+        // Accessing images 
+        $product_img1 = $_FILES['product_img1']['name'];
+        $product_img2 = $_FILES['product_img2']['name'];
+        $product_img3 = $_FILES['product_img3']['name'];
+
+        // Accessing images  tmp name
+        $temp_img1 = $_FILES['product_img1']['tmp_name'];
+        $temp_img2 = $_FILES['product_img2']['tmp_name'];
+        $temp_img3 = $_FILES['product_img3']['tmp_name'];
+
+
+        // Storing images into file
+        move_uploaded_file($temp_img1,"./product_images/$product_img1");
+        move_uploaded_file($temp_img2,"./product_images/$product_img2");
+        move_uploaded_file($temp_img3,"./product_images/$product_img3");
+
+        // Checking whether product is alredy present or not
+        $select_query = "Select * from `products` where product_title='$product_title'";
+        $result_select = mysqli_query($con, $select_query);
+        $number = mysqli_num_rows($result_select);
+
+
+        if ($number > 0) {
+            echo "<script>alert('product alredy present in database')</script>";
+        } else {
+    
+            // inserting in database
+            $insert_query = "insert into `products` (product_title,product_description,product_keywords,category_id,product_img1,product_img2,product_img3,product_price,date,status) values ('$product_title','$product_description','$product_keywords','$product_category','$product_img1','$product_img2','$product_img3','$product_price',NOW(),'$product_status')";
+            $result = mysqli_query($con, $insert_query);
+            if ($result) {
+                echo "<script>alert('Product added successfully')</script>";
+            }
+        }
+
+    }
+
+    ?>
 
 </body>
 
