@@ -45,7 +45,7 @@
                             <a class="nav-link" href="#">Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Register</a>
+                            <a class="nav-link" href="http://localhost/online-vegitable/admin/index.php">admin</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
@@ -90,90 +90,41 @@
 
     <!-- Product cart -->
     <section>
-        <div class="row">
+        <div class="row px-1">
 
             <!-- Products -->
             <div class="col-md-10">
                 <div class="row">
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img class="card-img-top" src="./images/potato.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn custom-color">Add to Cart</a>
-                                <a href="#" class="btn btn-secondary">View more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img class="card-img-top" src="./images/tomato.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn custom-color">Add to Cart</a>
-                                <a href="#" class="btn btn-secondary">View more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img class="card-img-top" src="./images/onion.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn custom-color">Add to Cart</a>
-                                <a href="#" class="btn btn-secondary">View more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img class="card-img-top" src="images/tomato.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn custom-color">Add to Cart</a>
-                                <a href="#" class="btn btn-secondary">View more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img class="card-img-top" src="images/eggplant.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn custom-color">Add to Cart</a>
-                                <a href="#" class="btn btn-secondary">View more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img class="card-img-top" src="images/potato.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn custom-color ">Add to Cart</a>
-                                <a href="#" class="btn btn-secondary  ">View more</a>
-                            </div>
-                        </div>
-                    </div>
+                            <?php
+
+                            // getting dynamic products
+                            $select_prod = "select * from `products` order by rand() limit 0,6";
+                            $result_prod = mysqli_query($con, $select_prod);
+                            while ($row_data = mysqli_fetch_assoc($result_prod)) {
+                                $product_title = $row_data['product_title'];
+                                $product_description = $row_data['product_description'];
+                                $product_img1 = $row_data['product_img1'];
+                                $product_price = $row_data['product_price'];
+                                echo "<div class='col-md-4 mb-2'>
+                                <div class='card'><img class='card-img-top' src='./admin/product_images/$product_img1' alt='Card image cap'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>$product_title</h5>
+                                    <p class='card-text'>$product_description</p>
+                                    <p class='card-text'> Price :- $product_price /- </p>
+                                    <a href='#' class='btn custom-color'>Add to Cart</a>
+                                    <a href='#' class='btn btn-secondary'>View more</a>
+                                </div></div>
+                                </div>";
+                            }
+                            ?>
+                    
                 </div>
             </div>
 
             <!-- Sidenav -->
             <div class="col-md-2 bg-secondary p-0">
 
-                
+
                 <!-- Category -->
                 <ul class="navbar-nav me-auto  text-center">
                     <li class="nav-item bg-info">
@@ -187,7 +138,7 @@
                     $select_cate = "select * from `category`";
                     $result_cate = mysqli_query($con, $select_cate);
 
-                    while ($row_data=mysqli_fetch_assoc($result_cate)) {
+                    while ($row_data = mysqli_fetch_assoc($result_cate)) {
                         $cate_title = $row_data['category_title'];
                         $cate_id = $row_data['category_id'];
 
