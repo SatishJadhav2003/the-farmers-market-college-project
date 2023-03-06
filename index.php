@@ -21,8 +21,9 @@
 
     <!-- Connecting server -->
     <?php
-    include('includes/connect.php');
-    ?>
+    include('./includes/connect.php');
+    include('./functions/common_fuctions.php')
+        ?>
 
 </head>
 
@@ -94,37 +95,17 @@
 
             <!-- Products -->
             <div class="col-md-10">
-                <div class="row">
-                            <?php
-
-                            // getting dynamic products
-                            $select_prod = "select * from `products` order by rand() limit 0,6";
-                            $result_prod = mysqli_query($con, $select_prod);
-                            while ($row_data = mysqli_fetch_assoc($result_prod)) {
-                                $product_title = $row_data['product_title'];
-                                $product_description = $row_data['product_description'];
-                                $product_img1 = $row_data['product_img1'];
-                                $product_price = $row_data['product_price'];
-                                echo "<div class='col-md-4 mb-2'>
-                                <div class='card'><img class='card-img-top' src='./admin/product_images/$product_img1' alt='Card image cap'>
-                                <div class='card-body'>
-                                    <h5 class='card-title'>$product_title</h5>
-                                    <p class='card-text'>$product_description</p>
-                                    <p class='card-text'> Price :- $product_price /- </p>
-                                    <a href='#' class='btn custom-color'>Add to Cart</a>
-                                    <a href='#' class='btn btn-secondary'>View more</a>
-                                </div></div>
-                                </div>";
-                            }
-                            ?>
-                    
+                <div class="row m-0">
+                    <?php
+                    // getting dynamic products
+                    getPrducts();
+                    get_unique_categories();
+                    ?>
                 </div>
             </div>
 
             <!-- Sidenav -->
             <div class="col-md-2 bg-secondary p-0">
-
-
                 <!-- Category -->
                 <ul class="navbar-nav me-auto  text-center">
                     <li class="nav-item bg-info">
@@ -132,20 +113,9 @@
                             <h5>Categories</h5>
                         </a>
                     </li>
-
                     <?php
-
-                    $select_cate = "select * from `category`";
-                    $result_cate = mysqli_query($con, $select_cate);
-
-                    while ($row_data = mysqli_fetch_assoc($result_cate)) {
-                        $cate_title = $row_data['category_title'];
-                        $cate_id = $row_data['category_id'];
-
-                        echo "<li class='nav-item '>
-                        <a href='index.php?category=$cate_id' class='nav-link text-light'>$cate_title</a>
-                    </li>";
-                    }
+                    // getting category from database
+                    getCategories();
                     ?>
                 </ul>
             </div>
