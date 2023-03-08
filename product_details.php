@@ -43,7 +43,7 @@
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./display_all.php">Product</a>
+                            <a class="nav-link" href="#">Product</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="http://localhost/online-vegitable/admin/index.php">admin</a>
@@ -57,11 +57,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Total Price: 100/-</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
 
                     </ul>
                     <form class="form-inline my-2 my-lg-0" action="search_product.php" method="get">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
-                        <input class="btn btn-outline-light my-2 my-sm-0" value="search" type="submit" name="search_data_product" >
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                            name="search_data">
+                        <input class="btn btn-outline-light my-2 my-sm-0" value="search" type="submit"
+                            name="search_data_product">
                     </form>
                 </div>
             </nav>
@@ -69,7 +74,7 @@
 
 
         <!-- second nav bar  -->
-        <nav class="navbar navbar-expand-md navbar-dark bg-secondary ">
+        <!-- <nav class="navbar navbar-expand-md navbar-dark bg-secondary ">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Welcome Guest</a>
@@ -78,7 +83,7 @@
                     <a class="nav-link" href="#">Login</a>
                 </li>
             </ul>
-        </nav>
+        </nav> -->
 
 
         <!-- Heading -->
@@ -91,14 +96,14 @@
 
     <!-- Product cart -->
     <section>
-        <div class="row" style="padding-right: 1.5rem;" >
+        <div class="row" style="padding-right: 1.5rem;">
 
             <!-- Products -->
             <div class="col-md-10">
                 <div class="row m-0">
                     <?php
                     // getting dynamic products
-                    getPrducts();
+                    view_more();
                     get_unique_categories();
                     ?>
                 </div>
@@ -107,7 +112,7 @@
             <!-- Sidenav -->
             <div class="col-md-2 bg-secondary p-4">
                 <!-- Category -->
-                <ul class="navbar-nav me-auto  text-center">
+                <ul class="navbar-nav text-center">
                     <li class="nav-item bg-info">
                         <a href="#" class="nav-link text-light">
                             <h5>Categories</h5>

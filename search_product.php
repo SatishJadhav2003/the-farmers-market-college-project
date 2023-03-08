@@ -43,7 +43,7 @@
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./display_all.php">Product</a>
+                            <a class="nav-link" href="#">Product</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="http://localhost/online-vegitable/admin/index.php">admin</a>
@@ -61,7 +61,7 @@
                     </ul>
                     <form class="form-inline my-2 my-lg-0" action="search_product.php" method="get">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
-                        <input class="btn btn-outline-light my-2 my-sm-0" value="search" type="submit" name="search_data_product" >
+                        <input class="btn btn-outline-light my-2 my-sm-0" value="search" type="submit" name="search_data_product">
                     </form>
                 </div>
             </nav>
@@ -91,21 +91,21 @@
 
     <!-- Product cart -->
     <section>
-        <div class="row" style="padding-right: 1.5rem;" >
+        <div class="row"style="padding-right: 1.2rem;padding-left:1.2rem">
 
             <!-- Products -->
             <div class="col-md-10">
                 <div class="row m-0">
                     <?php
                     // getting dynamic products
-                    getPrducts();
+                    search_product();
                     get_unique_categories();
                     ?>
                 </div>
             </div>
 
             <!-- Sidenav -->
-            <div class="col-md-2 bg-secondary p-4">
+            <div class="col-md-2 bg-secondary p-0">
                 <!-- Category -->
                 <ul class="navbar-nav me-auto  text-center">
                     <li class="nav-item bg-info">

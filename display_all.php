@@ -43,7 +43,7 @@
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./display_all.php">Product</a>
+                            <a class="nav-link" href="#">Product</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="http://localhost/online-vegitable/admin/index.php">admin</a>
@@ -98,7 +98,7 @@
                 <div class="row m-0">
                     <?php
                     // getting dynamic products
-                    getPrducts();
+                    get_all_prducts();
                     get_unique_categories();
                     ?>
                 </div>
@@ -107,7 +107,7 @@
             <!-- Sidenav -->
             <div class="col-md-2 bg-secondary p-4">
                 <!-- Category -->
-                <ul class="navbar-nav me-auto  text-center">
+                <ul class="navbar-nav text-center">
                     <li class="nav-item bg-info">
                         <a href="#" class="nav-link text-light">
                             <h5>Categories</h5>
