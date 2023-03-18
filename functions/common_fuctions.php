@@ -172,7 +172,7 @@ function view_more()
             <p class='card-text'>$product_description</p>
             <p class='card-text'> Price :- $product_price /- </p>
             <a href='#' class='btn custom-color'>Add to Cart</a>
-            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
+            <a href='./' class='btn btn-danger'>Back</a>
         </div></div>
         </div> 
         <div class='col-md-8'>
@@ -194,6 +194,25 @@ function view_more()
             }
         }
     }
+}
+
+
+// Get ip Address 
+function getIPAddress()
+{
+    //whether ip is from the share internet  
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    }
+    //whether ip is from the proxy  
+    elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }
+    //whether ip is from the remote address  
+    else {
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
 }
 
 ?>
