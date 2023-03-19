@@ -67,7 +67,10 @@
             </nav>
         </div>
 
-
+ <!-- Calling cart function -->
+ <?php
+        cart();
+        ?>
         <!-- second nav bar  -->
         <nav class="navbar navbar-expand-md navbar-dark bg-secondary ">
             <ul class="navbar-nav me-auto">

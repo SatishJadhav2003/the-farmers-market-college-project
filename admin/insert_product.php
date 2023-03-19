@@ -150,7 +150,6 @@
         if ($number > 0) {
             echo "<script>alert('product alredy present in database')</script>";
         } else {
-    
             // inserting in database
             $insert_query = "insert into `products` (product_title,product_description,product_keywords,category_id,product_img1,product_img2,product_img3,product_price,date,status) values ('$product_title','$product_description','$product_keywords','$product_category','$product_img1','$product_img2','$product_img3','$product_price',NOW(),'$product_status')";
             $result = mysqli_query($con, $insert_query);

@@ -22,7 +22,7 @@ function getPrducts()
             <h5 class='card-title'>$product_title</h5>
             <p class='card-text'>$product_description</p>
             <p class='card-text'> Price :- $product_price /- </p>
-            <a href='#' class='btn custom-color'>Add to Cart</a>
+            <a href='index.php?add_to_cart=$product_id' class='btn custom-color'>Add to Cart</a>
             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
         </div></div>
         </div>";
@@ -52,7 +52,7 @@ function get_all_prducts()
             <h5 class='card-title'>$product_title</h5>
             <p class='card-text'>$product_description</p>
             <p class='card-text'> Price :- $product_price /- </p>
-            <a href='#' class='btn custom-color'>Add to Cart</a>
+            <a href='index.php?add_to_cart=$product_id' class='btn custom-color'>Add to Cart</a>
             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
         </div></div>
         </div>";
@@ -85,7 +85,7 @@ function get_unique_categories()
             <h5 class='card-title'>$product_title</h5>
             <p class='card-text'>$product_description</p>
             <p class='card-text'> Price :- $product_price /- </p>
-            <a href='#' class='btn custom-color'>Add to Cart</a>
+            <a href='index.php?add_to_cart=$product_id' class='btn custom-color'>Add to Cart</a>
             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
         </div></div>
         </div>";
@@ -119,7 +119,7 @@ function search_product()
     global $con;
     if (isset($_GET['search_data_product'])) {
         $search_data_value = $_GET['search_data'];
-        $search_query = "select * from `products` where product_keywords like '%$search_data_value%' ";
+        $search_query = "select * from `products` where product_keywords like '%$search_data_value%' or product_title like '%$search_data_value%' ";
         $result_prod = mysqli_query($con, $search_query);
         $num_of_rows = mysqli_num_rows($result_prod);
         if ($num_of_rows == 0) {
@@ -137,7 +137,7 @@ function search_product()
             <h5 class='card-title'>$product_title</h5>
             <p class='card-text'>$product_description</p>
             <p class='card-text'> Price :- $product_price /- </p>
-            <a href='#' class='btn custom-color'>Add to Cart</a>
+            <a href='index.php?add_to_cart=$product_id' class='btn custom-color'>Add to Cart</a>
             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
         </div></div>
         </div>";
@@ -171,7 +171,7 @@ function view_more()
             <h5 class='card-title'>$product_title</h5>
             <p class='card-text'>$product_description</p>
             <p class='card-text'> Price :- $product_price /- </p>
-            <a href='#' class='btn custom-color'>Add to Cart</a>
+            <a href='index.php?add_to_cart=$product_id' class='btn custom-color'>Add to Cart</a>
             <a href='./' class='btn btn-danger'>Back</a>
         </div></div>
         </div> 
@@ -213,6 +213,30 @@ function getIPAddress()
         $ip = $_SERVER['REMOTE_ADDR'];
     }
     return $ip;
+}
+
+
+// Cart Function
+
+function cart()
+{
+    if (isset($_GET['add_to_cart'])) {
+        global $con;
+        $ip = getIPAddress();
+        $get_product_id = $_GET['add_to_cart'];
+        $select_query = "select * from `cart_details` where ip_address='$ip' and product_id=$get_product_id";
+        $result_query = mysqli_query($con, $select_query);
+        $num_of_rows = mysqli_num_rows($result_query);
+        if ($num_of_rows> 0) {
+            echo "<script> alert('item alredy present inside cart') </script>";
+            echo "<script>window.open('index.php','_self')</script>";
+        } else {
+            $insert_query = "insert into `cart_details` (product_id,ip_address,quantity) values ('$get_product_id','$ip',1)";
+            $result_query = mysqli_query($con, $insert_query);
+            echo "<script> alert('Item added to cart') </script>";
+            echo "<script>window.open('index.php','_self')</script>";
+        }
+    }
 }
 
 ?>

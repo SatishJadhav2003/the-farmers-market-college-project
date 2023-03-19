@@ -22,8 +22,9 @@
     <!-- Connecting server -->
     <?php
     include('./includes/connect.php');
-    include('./functions/common_fuctions.php')
-        ?>
+    include('./functions/common_fuctions.php');
+    
+    ?>
 
 </head>
 
@@ -46,7 +47,7 @@
                             <a class="nav-link" href="./display_all.php">Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://localhost/online-vegitable/admin/index.php">admin</a>
+                            <a class="nav-link" href="./admin/index.php">admin</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
@@ -60,13 +61,19 @@
 
                     </ul>
                     <form class="form-inline my-2 my-lg-0" action="search_product.php" method="get">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
-                        <input class="btn btn-outline-light my-2 my-sm-0" value="search" type="submit" name="search_data_product" >
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                            name="search_data">
+                        <input class="btn btn-outline-light my-2 my-sm-0" value="search" type="submit"
+                            name="search_data_product">
                     </form>
                 </div>
             </nav>
         </div>
 
+        <!-- Calling cart function -->
+        <?php
+        cart();
+        ?>
 
         <!-- second nav bar  -->
         <nav class="navbar navbar-expand-md navbar-dark bg-secondary ">
@@ -91,7 +98,7 @@
 
     <!-- Product cart -->
     <section>
-        <div class="row" style="padding-right: 1.5rem;" >
+        <div class="row" style="padding-right: 1.5rem;">
 
             <!-- Products -->
             <div class="col-md-10">
@@ -100,6 +107,8 @@
                     // getting dynamic products
                     getPrducts();
                     get_unique_categories();
+                    // $ip = getIPAddress();
+                    // echo "ip address " .$ip;
                     ?>
                 </div>
             </div>
