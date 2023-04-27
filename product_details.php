@@ -40,22 +40,22 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Product</a>
+                            <a class="nav-link" href="./display_all.php">Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://localhost/online-vegitable/admin/index.php">admin</a>
+                            <a class="nav-link" href="./admin/index.php">admin</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup>1</sup></a>
+                            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><?php cart_item() ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Total Price: 100/-</a>
+                            <a class="nav-link" href="#">Total Price:  <?php total_price() ?> /-</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Login</a>

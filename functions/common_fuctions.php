@@ -227,7 +227,7 @@ function cart()
         $select_query = "select * from `cart_details` where ip_address='$ip' and product_id=$get_product_id";
         $result_query = mysqli_query($con, $select_query);
         $num_of_rows = mysqli_num_rows($result_query);
-        if ($num_of_rows> 0) {
+        if ($num_of_rows > 0) {
             echo "<script> alert('item alredy present inside cart') </script>";
             echo "<script>window.open('index.php','_self')</script>";
         } else {
@@ -238,5 +238,43 @@ function cart()
         }
     }
 }
+
+
+// get cart items number
+function cart_item()
+{
+
+    global $con;
+    $ip = getIPAddress();
+    $select_query = "select * from `cart_details` where ip_address='$ip'";
+    $result_query = mysqli_query($con, $select_query);
+    $count_cart_item = mysqli_num_rows($result_query);
+    echo $count_cart_item;
+}
+
+
+// get total price 
+
+function total_price()
+{
+    global $con;
+    $ip = getIPAddress();
+    $cart_query = "select * from `cart_details` where ip_address='$ip'";
+    $result_query = mysqli_query($con, $cart_query);
+    $total =0;
+    while ($row_data = mysqli_fetch_array($result_query)) {
+        $product_id = $row_data['product_id'];
+        $select_products = "select * from `products` where product_id=$product_id";
+        $result_products = mysqli_query($con, $select_products);
+        while ($row_products = mysqli_fetch_array($result_products)) {
+           
+            $product_price = array($row_products['product_price']);
+            $product_value = array_sum($product_price);
+            $total+=$product_value;
+        }
+    }
+    echo $total;
+}
+
 
 ?>
