@@ -46,7 +46,7 @@
                             <a class="nav-link" href="./display_all.php">Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./admin/index.php">admin</a>
+                            <a class="nav-link" href=".#">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
@@ -90,11 +90,7 @@
 
 
         <!-- Heading -->
-        <div class="bg-light p-3">
-            <h1 class="text-center">
-                Welcome to Farmer's Market
-            </h1>
-        </div>
+        
     </section>
 
     <!-- Product cart -->

@@ -41,13 +41,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./display_all.php">Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./admin/index.php">admin</a>
+                            <a class="nav-link" href=".#">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
@@ -76,7 +76,7 @@
         ?>
 
         <!-- second nav bar  -->
-        <nav class="navbar navbar-expand-md navbar-dark bg-secondary ">
+        <!-- <nav class="navbar navbar-expand-md navbar-dark bg-secondary ">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Welcome Guest</a>
@@ -85,7 +85,7 @@
                     <a class="nav-link" href="#">Login</a>
                 </li>
             </ul>
-        </nav>
+        </nav> -->
 
 
         <!-- Heading -->

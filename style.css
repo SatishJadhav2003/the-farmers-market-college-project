@@ -52,3 +52,38 @@
 
 /* Cart */
 
+
+
+.login_form {
+    /* background-color: #76b1eaf7; */
+    box-shadow: 13px 16px 27px -1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 13px 16px 27px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 13px 16px 27px -1px rgba(0, 0, 0, 0.75);
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 3rem;
+    width: 80%;
+    margin: auto;
+    height: 50%;
+}
+
+.signup_form {
+    /* background-color: #76b1eaf7; */
+    box-shadow: 13px 16px 27px -1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 13px 16px 27px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 13px 16px 27px -1px rgba(0, 0, 0, 0.75);
+    padding: 40px;
+    border-radius: 20px;
+    width: 80%;
+    margin: auto;
+    height: 50%;
+}
+
+
+.d-btn {
+    position: absolute;
+    width: 40%;
+    margin-left: 13rem;
+    margin-top: 12px;
+
+}

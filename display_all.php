@@ -46,13 +46,13 @@
                             <a class="nav-link" href="./display_all.php">Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./admin/index.php">admin</a>
+                            <a class="nav-link" href=".#">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><?php cart_item() ?></a>
+                            <a class="nav-link" href="./cart.php"><i class="fa-solid fa-cart-shopping"></i><?php cart_item() ?></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Total Price:  <?php total_price() ?> /-</a>
@@ -73,16 +73,6 @@
         ?>
 
         <!-- second nav bar  -->
-        <nav class="navbar navbar-expand-md navbar-dark bg-secondary ">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Welcome Guest</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                </li>
-            </ul>
-        </nav>
 
 
         <!-- Heading -->

@@ -49,16 +49,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./display_all.php">Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./admin/index.php">admin</a>
+                            <a class="nav-link" href=".#">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="contact.php">Contact</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup>
@@ -77,43 +77,41 @@
         ?>
 
         <!-- second nav bar  -->
-        <nav class="navbar navbar-expand-md navbar-dark bg-secondary ">
+        <!-- <nav class="navbar navbar-expand-md navbar-dark bg-secondary text-center ">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Welcome Guest</a>
+                    <a class="nav-link" href="#">Hello Satish</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="#">Here is your basket</a>
                 </li>
             </ul>
-        </nav>
-
-
-        <!-- Heading -->
-        <div class="bg-light p-3">
+        </nav> -->
+        <div class=" p-3 bg-secondary">
             <h1 class="text-center">
-                Welcome to Farmer's Market
+            Hello Satish , Here is your basket
             </h1>
         </div>
+
+        <!-- Heading -->
+        
     </section>
 
     <!-- Cart Item -->
-    <div class="container mt-3">
+    <div class="container mt-5">
         <div class="row">
-            <form action="" method="post">
-                <table class="table table-bordered text-center">
-                    <thead>
-                        <tr>
-                            <th scope="col">Product Title</th>
-                            <th scope="col">Product Image</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Total Price</th>
-                            <th scope="col">Remove</th>
-                            <th scope="col">Operations</th>
-                        </tr>
-                    </thead>
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">Product Title</th>
+                        <th scope="col">Product Image</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total Price</th>
+                        <th scope="col">Operations</th>
+                    </tr>
+                </thead>
+                <form action="" method="post">
                     <tbody>
-
                         <!-- PHP code to get dynamic data -->
                         <?php
                         global $con;
@@ -127,75 +125,81 @@
                             $result_products = mysqli_query($con, $select_products);
                             while ($row_products = mysqli_fetch_array($result_products)) {
 
-                                $product_price1 = array($row_products['product_price']);
+                                // $product_price1 = array($row_products['product_price']);
                                 $product_price = $row_products['product_price'];
                                 $product_title = $row_products['product_title'];
                                 $product_img1 = $row_products['product_img1'];
-                                $product_value = array_sum($product_price1);
-                                $total += $product_value;
+                                // $product_value = array_sum($product_price1);
+                        
 
-                                ?>
+                                // Update cart item
+                                $ip = getIPAddress();
+                                if (isset($_POST['update_cart'])) {
+                                    $quantity = $_POST['qty'];
+                                    $update_cart = "update `cart_details` set quantity=$quantity where (ip_address = '$ip'  AND product_id='$product_id' )";
+                                    $result_products_quantity = mysqli_query($con, $update_cart);
+                                }
 
-                                <tr>
-                                    <th scope="row">
-                                        <?php echo $product_title ?>
-                                    </th>
-                                    <td><img src="./images/<?php echo $product_img1 ?>" class="cart_img"> </td>
-                                    <td> <input type="text" name="qty" class="form-input w-50"> </td>
-                                    <td>
-                                        <?php echo $product_price ?>
-                                    </td>
-                                    <?php
-                                    $ip = getIPAddress();
-                                    if (isset($_POST['update_cart'])) {
-                                        $quantity = $_POST['qty'];
-                                        $update_cart = "update `cart_details` set quantity=$quantity where ip_address = '$ip'";
-                                        $result_products_quantity = mysqli_query($con, $update_cart);
-                                        $total = $total * $quantity;
+                                // Remove item from cart
+                                if (isset($_POST['remove_cart'])) {
+                                    $remove_id = $_POST['remove_cart'];
+                                    $delete_query = "Delete from `cart_details` where product_id='$remove_id' ";
+                                    $run_delete = mysqli_query($con, $delete_query);
+                                    if ($run_delete) {
+                                        echo "<script> window.open('cart.php','_self')</script>";
                                     }
+                                }
+
+
+                                $ip = getIPAddress();
+                                $category = "select * from `cart_details` where (ip_address = '$ip' AND product_id='$product_id' )";
+                                $result_category = mysqli_query($con, $category);
+                                while ($row_category = mysqli_fetch_array($result_category)) {
+                                    $cate_quantity = $row_category['quantity'];
                                     ?>
+                                    <tr>
+                                        <th scope="row">
+                                            <?php echo $product_title ?>
+                                        </th>
+                                        <td><img src="./images/<?php echo $product_img1 ?>" class="cart_img"> </td>
+                                        <td> <input type="text" name="qty" value=" <?php echo $cate_quantity ?>"
+                                                class="form-input w-50"> </td>
 
-
-                                    <td> <input type="checkbox" name="removeitem[]" vlaue=" <?php echo $product_id ?> "> </td>
+                                        <td>
+                                            <?php $total += $product_price * $cate_quantity;
+                                            echo $product_price * $cate_quantity;
+                                } ?>
+                                    </td>
                                     <td>
-                                        <!-- <button class="bg-info py-2 px-3 mx-3 mb-5 border-0">
-                                        Update
-                                    </button> -->
                                         <input type="submit" value="update cart" class="bg-info py-2 px-3 mx-3 mb-5 border-0"
                                             name="update_cart">
-                                        <!-- <button class="bg-danger py-2 px-3 mx-3 mb-5 border-0">
-                                            Remove
-                                        </button> -->
-                                        <input type="submit" value="remove cart" class="bg-danger py-2 px-3 mx-3 mb-5 border-0"
+                                        <input type="submit" value="remove item" class="bg-danger py-2 px-3 mx-3 mb-5 border-0"
                                             name="remove_cart">
                                     </td>
                                 </tr>
-
                             <?php }
                         } ?>
                     </tbody>
-                </table>
-            </form>
+                </form>
+            </table>
 
-            <?php  
-                function remove_cart_item()
-                {
-                    global $con;
-                    if(isset($_POST['remove_cart']))
-                    {
-                            foreach ($_POST['removeitem'] as $remove_id) {
-                                echo $remove_id;
-                                $delete_query = "Delete from `cart_details` where product_id='$remove_id' ";
-                                $run_delete = mysqli_query($con,$delete_query);
-                                if($run_delete)
-                                {
-                                    echo "<script> window.open('cart.php','_self')</script>";
-                                }
-                            }
-                    }
-                }
-
-                echo $remove_item = remove_cart_item();
+            <?php
+            // function remove_cart_item()
+            // {
+            //     global $con;
+            //     if(isset($_POST['remove_cart']))
+            //     {
+            //             foreach ($_POST['removeitem'] as $remove_id) {
+            //                 echo $remove_id;
+            //                 $delete_query = "Delete from `cart_details` where product_id='$remove_id' ";
+            //                 $run_delete = mysqli_query($con,$delete_query);
+            //                 if($run_delete)
+            //                 {
+            //                     echo "<script> window.open('cart.php','_self')</script>";
+            //                 }
+            //             }
+            //     }
+            // }
             ?>
 
 

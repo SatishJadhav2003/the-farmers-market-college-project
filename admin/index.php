@@ -45,18 +45,18 @@
             <div class="col-md-12 bg-secondary p-2 d-flex align-items-center">
                 <div class="p-4">
                     <a href="#">
-                        <img src="../images/potato.jpg" alt=" img not found" class="admin-image">
+                        <img src="./admin.jpg" alt=" img not found" class="admin-image">
                     </a>
                     <p class="text-center text-light my-2">Admin name</p>
                 </div>
                 <div class="button text-center">
                     <button class="m-2"><a href="insert_product.php" class="nav-link  custom-color m-1">Insert Products</a></button>
-                    <button class="m-2"><a href="" class="nav-link  custom-color m-1">View Products</a></button>
+                    <button class="m-2"><a href="index.php?view_products" class="nav-link  custom-color m-1">View Products</a></button>
                     <button class="m-2"><a href="index.php?insert_category" class="nav-link  custom-color m-1">Insert Categories</a></button>
-                    <button class="m-2"><a href="" class="nav-link  custom-color m-1">View Categories</a></button>
-                    <button class="m-2"><a href="" class="nav-link  custom-color m-1">All Orders</a></button>
-                    <button class="m-2"><a href="" class="nav-link  custom-color m-1">All Payments</a></button>
-                    <button class="m-2"><a href="" class="nav-link  custom-color m-1">List Users</a></button>
+                    <button class="m-2"><a href="index.php?view_category" class="nav-link  custom-color m-1">View Categories</a></button>
+                    <button class="m-2"><a href="./index.php" class="nav-link  custom-color m-1">All Orders</a></button>
+                    <button class="m-2"><a href="./index.php" class="nav-link  custom-color m-1">All Payments</a></button>
+                    <button class="m-2"><a href="./index.php" class="nav-link  custom-color m-1">List Users</a></button>
                 </div>
             </div>
         </div>
@@ -70,6 +70,14 @@
         //Insert Category
         if (isset($_GET['insert_category'])) {
             include('insert_categories.php');
+        }
+        //View products
+        if (isset($_GET['view_products'])) {
+            include('view_products.php');
+        }
+        //View categories
+        if (isset($_GET['view_category'])) {
+            include('view_category.php');
         }
         ?>
     </div>
