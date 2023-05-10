@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
+    header("location: login.php");
+    exit;
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,18 +65,16 @@
                             <a class="nav-link" href="./display_all.php">Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href=".#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.php">Contact</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup>
                                     <?php cart_item() ?>
                                 </sup></a>
                         </li>
-
                     </ul>
+                    <div class="px-3">
+                        <form action="" method="post">
+                            <input class="btn btn-danger my-2 my-sm-0" value="Log Out" type="submit" name="logout">
+                        </form>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -89,7 +97,7 @@
         </nav> -->
         <div class=" p-3 bg-secondary">
             <h1 class="text-center">
-            Hello Satish , Here is your basket
+            Hello, Here is your basket
             </h1>
         </div>
 
@@ -250,3 +258,11 @@
 </body>
 
 </html>
+
+<?php 
+
+if (isset($_POST['logout'])) {
+    $_SESSION['loggedin'] = false;
+    exit;
+}
+?>

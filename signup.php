@@ -6,30 +6,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $email = $_POST["email"];
     $password = $_POST["password"];
+    $mobile = $_POST['mobile'];
     $cpassword = $_POST["cpassword"];
     $exists = false;
 
-    if ($username != "" && $password != "" && $email!="") {
+    if ($username != "" && $password != "" && $email != "") {
 
-        $select_query = "Select * from `users` where username='$username'";
+        $select_query = "Select * from `users` where email='$email'";
         $out = mysqli_query($con, $select_query);
         $rows_count = mysqli_num_rows($out);
         if ($rows_count > 0) {
-            echo "<script>alert('Username already exists')</script>";
+            echo "<script>alert('Email already exists')</script>";
         } else {
             if ($password == $cpassword && $exists == false) {
-                $sql = "INSERT INTO `users` (`username`, `email`, `password`, `date`) VALUES ('$username', '$email', '$password', current_timestamp())";
+                $sql = "INSERT INTO `users` (`name`,`mobile`, `email`, `password`, `date`) VALUES ('$username','$mobile', '$email', '$password', current_timestamp())";
                 $result = mysqli_query($con, $sql);
                 if ($result) {
                     echo "<script>alert('successfuly signup')</script>";
+                    header('location:login.php');
                 }
             } else {
                 echo "<script>alert('Password do not match')</script>";
             }
         }
         # code...
-    }
-    else {
+    } else {
         echo "<script>alert('All fields are neccessary')</script>";
     }
 
@@ -74,10 +75,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <form class="signup_form" action="" method="post">
             <div class="mb-3">
-                <label for="username" class="form-label col-md-6">Username</label>
+                <label for="username" class="form-label col-md-6">Name</label>
                 <input type="text" class="form-control" id="username" name='username' placeholder="">
             </div>
-
+            <div class="mb-3">
+                <label for="mobile" class="form-label col-md-6">Mobile</label>
+                <input type="text" class="form-control" id="mobile" name='mobile' placeholder="">
+            </div>
             <div class="mb-3">
                 <label for="email" class="form-label col-md-6">Email address</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="">

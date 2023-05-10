@@ -165,7 +165,7 @@ function view_more()
                 $product_img2 = $row_data['product_img2'];
                 $product_img3 = $row_data['product_img3'];
                 $product_price = $row_data['product_price'];
-                echo "<div class='col-md-4 mb-2'>
+                echo "<div class='col-md-4 mb-2 pt-5'>
         <div class='card'><img class='card-img-top' src='./admin/product_images/$product_img1' alt='Card image cap'>
         <div class='card-body'>
             <h5 class='card-title'>$product_title</h5>
@@ -175,7 +175,7 @@ function view_more()
             <a href='./' class='btn btn-danger'>Back</a>
         </div></div>
         </div> 
-        <div class='col-md-8'>
+        <div class='col-md-8 pt-3'>
                         <div class='row'>
                             <div class='col-md-12'>
                                 <h4 class='text-center custom-navb mb-4' style='color:#51f5c4;'>

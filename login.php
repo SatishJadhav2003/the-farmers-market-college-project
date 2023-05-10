@@ -3,11 +3,11 @@ $login = false;
 $showErr = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   include('partials/dbconnect.php');
-  $username = $_POST["username"];
+  $email = $_POST["username"];
   $password = $_POST["password"];
   $exists = false;
 
-  $sql = "Select * from `users` where username='$username' AND password='$password'";
+  $sql = "Select * from `users` where email='$email' AND password='$password'";
   $result = mysqli_query($con, $sql);
   $num = mysqli_num_rows($result);
   if ($num == 1) {
@@ -53,11 +53,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
   <div class="container col-md-6">
-    <h2 class='text-center my-5' style="color:grey; font-weight: bold">Login to Our Website</h2>
+    <h2 class='text-center my-5' style="color:grey; font-weight: bold">Login to Continue</h2>
 
     <form class="login_form" action="" method="post">
       <div class="mb-3">
-        <label for="username" class="form-label">Username</label>
+        <label for="username" class="form-label">Email</label>
         <input type="text" class="form-control" id="username" name='username' autocomplete="off" placeholder="Enter Username">
       </div>
 

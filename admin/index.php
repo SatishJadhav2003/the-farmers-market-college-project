@@ -54,9 +54,8 @@
                     <button class="m-2"><a href="index.php?view_products" class="nav-link  custom-color m-1">View Products</a></button>
                     <button class="m-2"><a href="index.php?insert_category" class="nav-link  custom-color m-1">Insert Categories</a></button>
                     <button class="m-2"><a href="index.php?view_category" class="nav-link  custom-color m-1">View Categories</a></button>
-                    <button class="m-2"><a href="./index.php" class="nav-link  custom-color m-1">All Orders</a></button>
-                    <button class="m-2"><a href="./index.php" class="nav-link  custom-color m-1">All Payments</a></button>
-                    <button class="m-2"><a href="./index.php" class="nav-link  custom-color m-1">List Users</a></button>
+                    <button class="m-2"><a href="index.php" class="nav-link  custom-color m-1">All Orders</a></button>
+                    <button class="m-2"><a href="index.php?view_user" class="nav-link  custom-color m-1">List Users</a></button>
                 </div>
             </div>
         </div>
@@ -78,6 +77,10 @@
         //View categories
         if (isset($_GET['view_category'])) {
             include('view_category.php');
+        }
+        // view user
+        if (isset($_GET['view_user'])) {
+            include('view_user.php');
         }
         ?>
     </div>

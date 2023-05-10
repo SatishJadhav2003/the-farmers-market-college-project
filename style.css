@@ -87,3 +87,8 @@
     margin-top: 12px;
 
 }
+
+
+.logout:hover{
+    color: red;
+}

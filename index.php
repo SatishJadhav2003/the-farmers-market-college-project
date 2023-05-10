@@ -1,3 +1,17 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
+    header("location: login.php");
+    exit;
+}
+
+if (isset($_POST['logout'])) {
+    $_SESSION['loggedin'] = false;
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +37,7 @@
     <?php
     include('./includes/connect.php');
     include('./functions/common_fuctions.php');
-    
+
     ?>
 
 </head>
@@ -47,16 +61,14 @@
                             <a class="nav-link" href="./display_all.php">Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href=".#">About</a>
+                            <a class="nav-link" href="./cart.php"><i class="fa-solid fa-cart-shopping"></i><sup>
+                                    <?php cart_item() ?>
+                                </sup></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./cart.php"><i class="fa-solid fa-cart-shopping"></i><sup> <?php cart_item() ?></sup></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Total Price:  <?php total_price() ?> /-</a>
+                            <a class="nav-link" href="#">Total Price:
+                                <?php total_price() ?> /-
+                            </a>
                         </li>
 
                     </ul>
@@ -65,7 +77,13 @@
                             name="search_data">
                         <input class="btn btn-outline-light my-2 my-sm-0" value="search" type="submit"
                             name="search_data_product">
+
                     </form>
+                    <div class="px-3">
+                        <form action="" method="post">
+                            <input class="btn btn-danger my-2 my-sm-0" value="Log Out" type="submit" name="logout">
+                        </form>
+                    </div>
                 </div>
             </nav>
         </div>

@@ -1,3 +1,14 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
+    header("location: login.php");
+    exit;
+}
+
+if (isset($_POST['logout'])) {
+    $_SESSION['loggedin'] = false;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,9 +60,6 @@
                             <a class="nav-link" href="http://localhost/online-vegitable/admin/index.php">admin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><?php cart_item() ?></a>
                         </li>
                         <li class="nav-item">
@@ -63,6 +71,11 @@
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
                         <input class="btn btn-outline-light my-2 my-sm-0" value="search" type="submit" name="search_data_product">
                     </form>
+                    <div class="px-3">
+                        <form action="" method="post">
+                            <input class="btn btn-danger my-2 my-sm-0" value="Log Out" type="submit" name="logout">
+                        </form>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -71,18 +84,6 @@
  <?php
         cart();
         ?>
-        <!-- second nav bar  -->
-        <nav class="navbar navbar-expand-md navbar-dark bg-secondary ">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Welcome Guest</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                </li>
-            </ul>
-        </nav>
-
 
         <!-- Heading -->
         <div class="bg-light p-3">
