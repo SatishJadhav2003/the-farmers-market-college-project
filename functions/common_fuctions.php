@@ -261,19 +261,35 @@ function total_price()
     $ip = getIPAddress();
     $cart_query = "select * from `cart_details` where ip_address='$ip'";
     $result_query = mysqli_query($con, $cart_query);
-    $total =0;
+    $total = 0;
     while ($row_data = mysqli_fetch_array($result_query)) {
         $product_id = $row_data['product_id'];
         $select_products = "select * from `products` where product_id=$product_id";
         $result_products = mysqli_query($con, $select_products);
         while ($row_products = mysqli_fetch_array($result_products)) {
-           
+
             $product_price = array($row_products['product_price']);
             $product_value = array_sum($product_price);
-            $total+=$product_value;
+            $total += $product_value;
         }
     }
     echo $total;
+}
+
+
+function makeOrder()
+{
+    if (isset($_GET['ordered'])) {
+        global $con;
+        $ip = getIPAddress();
+        $username = $_SESSION['username'];
+        $select_query = "select * from `cart_details` where ip_address='$ip'";
+        $result_query = mysqli_query($con, $select_query);
+        $insert_query = "insert into `orders` (product_id,name) values ('','$username')";
+        $result_query = mysqli_query($con, $insert_query);
+        echo "<script> alert('Item added to cart') </script>";
+        echo "<script>window.open('index.php','_self')</script>";
+    }
 }
 
 

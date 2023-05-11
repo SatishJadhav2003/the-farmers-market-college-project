@@ -43,7 +43,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
             object-fit: contain;
         }
 
-        
         button {
             padding: 15px 25px;
             border: unset;
@@ -83,6 +82,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
         .confirm:hover::before {
             width: 100%;
         }
+
         .cancle::before {
             content: "";
             position: absolute;
@@ -99,7 +99,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
         }
 
         .cancle:hover {
-            color: black;
+            color: #e8e8e8;
         }
 
         .cancle:hover::before {
@@ -160,12 +160,12 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
         </nav> -->
         <div class=" p-3 bg-secondary">
             <h1 class="text-center">
-            Hello, Here is your basket
+                Hello, Here is your basket
             </h1>
         </div>
 
         <!-- Heading -->
-        
+
     </section>
 
     <!-- Cart Item -->
@@ -177,8 +177,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                         <th scope="col">Product Title</th>
                         <th scope="col">Product Image</th>
                         <th scope="col">Quantity</th>
-                        <th scope="col">Total Price</th>
-                        <th scope="col">Operations</th>
                     </tr>
                 </thead>
                 <form action="" method="post">
@@ -233,20 +231,13 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                                             <?php echo $product_title ?>
                                         </th>
                                         <td><img src="./images/<?php echo $product_img1 ?>" class="cart_img"> </td>
-                                        <td> <input type="text" name="qty" value=" <?php echo $cate_quantity ?>"
-                                                class="form-input w-50"> </td>
+                                        <td style="font-weight: normal;font-size:large">
+                                            <?php echo $cate_quantity ?>
+                                        </td>
 
-                                        <td>
-                                            <?php $total += $product_price * $cate_quantity;
-                                            echo $product_price * $cate_quantity;
+
+                                        <?php $total += $product_price * $cate_quantity;
                                 } ?>
-                                    </td>
-                                    <td>
-                                        <input type="submit" value="update cart" class="bg-info py-2 px-3 mx-3 mb-5 border-0"
-                                            name="update_cart">
-                                        <input type="submit" value="remove item" class="bg-danger py-2 px-3 mx-3 mb-5 border-0"
-                                            name="remove_cart">
-                                    </td>
                                 </tr>
                             <?php }
                         } ?>
@@ -278,28 +269,30 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
 
             <!-- Subtotal -->
-            <div class="d-flex pt-3">
-                <h4 class="px-3"> Subtotal :
-                    <strong class="text-info">
-                        <?php echo $total ?> /-
-                    </strong>
-                </h4>
-                <a href="index.php">
-                    <button class="cancle px-3 py-2 mb-5 border-0">
-                        Continue Shopping
-                    </button>
-                </a>
-                <a href="checkout.php">
-                    <button class="confirm py-2 px-3 mx-3 mb-5 border-0">
-                        Chcekout
-                    </button>
-                </a>
-            </div>
 
         </div>
     </div>
+    <div class="text-center">
+        <h4 class="px-3"> Subtotal :
+            <strong class="text-info">
+                <?php echo $total ?> /-
+            </strong>
+        </h4>
+        <P>Payment Mode: COD</P>
 
-
+    </div>
+    <div class="text-center">
+        <a href="cart.php">
+            <button class=" px-3 py-2 mb-5 border-0 cancle" style="font-weight:bold">
+                Cancle
+            </button>
+        </a>
+        <a href="index.php">
+            <button class="py-2 px-3 mx-3 mb-5 border-0 confirm" style="font-weight:bold">
+                Confirm order
+            </button>
+        </a>
+    </div>
     <!-- Footer -->
 
     <div class="custom-navbar text-center ">
@@ -322,7 +315,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
 </html>
 
-<?php 
+<?php
 
 if (isset($_POST['logout'])) {
     $_SESSION['loggedin'] = false;
